@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Table </title>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 50%;
+      text-align: center;
+    }
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+    }
+    th {
+      background-color: #00bcd4;
+      color: white;
+    }
+    .alt {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+
+<table id="myTable">
+  <tr>
+    <th>S.N.</th>
+    <th>Name</th>
+    <th>Image</th>
+  </tr>
+</table>
+
+<script>
+  let table = document.getElementById("myTable");
+
+  for (let i = 1; i <= 4; i++) {
+    let row = table.insertRow();
+    if (i % 2 === 0) {
+      row.className = "alt"; // alternate background
+    }
+
+    let cell1 = row.insertCell();
+    let cell2 = row.insertCell();
+    let cell3 = row.insertCell();
+
+    cell1.innerText = i;
+    cell2.innerText = "Name " + i;
+    cell3.innerText = i + ".jpg";
+  }
+</script>
+
+</body>
+</html>
